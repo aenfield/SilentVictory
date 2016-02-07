@@ -1,3 +1,5 @@
+# KEEP until I remember: to run all tests in the dir: 'nosetests' (after installing nose w/ conda install nose)
+
 import unittest
 
 import patrol

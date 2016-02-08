@@ -26,6 +26,13 @@ class PatrolAssignment(unittest.TestCase):
         self.assertEqual('Marshalls', p.assignment)
 
 
+# class EncounterSelection(unittest.TestCase):
+#
+#     def test_can_get_encounter(self):
+#         p = patrol.Patrol(self.a_port_and_date, random_seed=0)
+#
+#         assertIs(p.get_)
+
 
 
 if __name__ == '__main__':

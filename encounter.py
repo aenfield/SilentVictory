@@ -41,6 +41,11 @@ class Encounter(object):
                                     11:None, 12:'Aircraft'},
                               }
 
-    def __init__(self, location, random_seed=None):
+    def __init__(self, location, random_event_ok=False, random_seed=None):
         self.location = location
-        self.type = self.encounters_by_location[self.location][dice.Dice('2d6', random_seed).roll()]
+
+        type_die_roll = dice.Dice('2d6', random_seed).roll()
+        if (type_die_roll == 12) and (random_event_ok):
+            self.type = 'Random event'
+        else:
+            self.type = self.encounters_by_location[self.location][type_die_roll]

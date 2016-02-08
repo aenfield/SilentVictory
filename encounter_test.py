@@ -37,7 +37,11 @@ class EncounterSelection(unittest.TestCase):
             ['Capital ship','Warship','Two ships and escort','Ship and escort',
              'Aircraft',None])
 
+    def test_encounter_with_random_event(self):
+        e = encounter.Encounter('Transit', random_event_ok=True, random_seed=20)
 
+        # random_seed of 12 gives us a 2d6 roll of 12
+        self.assertEqual('Random event', e.type)
 
 
 

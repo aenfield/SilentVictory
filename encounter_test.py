@@ -43,6 +43,11 @@ class EncounterSelection(unittest.TestCase):
         # random_seed of 12 gives us a 2d6 roll of 12
         self.assertEqual('Random event', e.type)
 
+    def test_encounter_with_12_and_no_random_event(self):
+        e = encounter.Encounter('Transit', random_event_ok=False, random_seed=20)
+
+        self.assertNotEqual('Random event', e.type)
+
 
 
 

@@ -1,4 +1,5 @@
 import dice
+import encounter
 
 class Patrol(object):
     patrol_assignments = {'Pearl Harbor - 1941':
@@ -29,3 +30,6 @@ class Patrol(object):
 
     def get_ports_and_dates(self):
         return self.patrol_assignments.keys()
+
+    def get_encounter(self):
+        return encounter.Encounter(self.assignment)

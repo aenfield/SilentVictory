@@ -3,12 +3,14 @@
 import unittest
 
 import patrol
+import encounter
+
+a_port_and_date = 'Pearl Harbor - 1941'
 
 class PatrolAssignment(unittest.TestCase):
-    a_port_and_date = 'Pearl Harbor - 1941'
 
     def test_can_get_list_of_ports_and_dates(self):
-        p = patrol.Patrol(self.a_port_and_date)
+        p = patrol.Patrol(a_port_and_date)
         d = p.get_ports_and_dates()
 
         self.assertEqual(len(d), 16)
@@ -29,9 +31,12 @@ class PatrolAssignment(unittest.TestCase):
 class EncounterSelection(unittest.TestCase):
 
     def test_can_get_encounter(self):
-        p = patrol.Patrol(self.a_port_and_date, random_seed=0)
+        p = patrol.Patrol(a_port_and_date, random_seed=0) # Marshalls
 
-        assertIs(p.get_)
+        self.assertIs(p.get_encounter(), encounter.Encounter)
+        self.assertEqual('Marshalls', e.location)
+
+        # TODO patrol calls it 'assignment' but here we say 'location', right? what's better
 
 
 
